@@ -1,7 +1,7 @@
 #pragma once
 
 #include <mge/core/GameObject.hpp>
-#include "Collider.h"
+#include "Collision/Collider.h"
 
 class OBB : public Collider
 {

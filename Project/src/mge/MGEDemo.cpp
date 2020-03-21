@@ -296,10 +296,10 @@ void MGEDemo::StartTest(int objCount, int staticChance, int percentAABB)
 
 	///////////////////////////////////
 	int count = objCount;
-	float statChance = staticChance;
+	float statChance = (float)staticChance;
 	///////////////////////////////////
 
-	int numbreOfStaticItems = ((float)(count)) / 100 * statChance;
+	int numbreOfStaticItems = (int)(((float)(count)) / 100 * statChance);
 	int staticCount = 0;
 	bool isStatic = false;
 
@@ -354,9 +354,9 @@ void MGEDemo::StartTest(int objCount, int staticChance, int percentAABB)
 			_ocTree->Add(ocObj);
 
 			//rotate
-			ocObj->rotate(i * 5, glm::vec3(1, 0, 0));
-			ocObj->rotate(i * 2, glm::vec3(0, 1, 0));
-			ocObj->rotate(i * 3, glm::vec3(0, 0, 1));
+			ocObj->rotate((float)(i * 5), glm::vec3(1, 0, 0));
+			ocObj->rotate((float)(i * 2), glm::vec3(0, 1, 0));
+			ocObj->rotate((float)(i * 3), glm::vec3(0, 0, 1));
 		}
 
 		//random velocity

@@ -1,5 +1,5 @@
 #include "OBB.h"
-#include "OCObject.h"
+#include "collision/OcTree/OCObject.h"
 #include <GL/glew.h>
 
 OBB::OBB(glm::vec3 pCenter, glm::vec3 pHalfSize) : Collider(pCenter)
