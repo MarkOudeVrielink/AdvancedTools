@@ -1,0 +1,2 @@
+Avg. fps: 568
+Avg. fps: 524
