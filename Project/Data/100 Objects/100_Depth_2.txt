@@ -1,0 +1,18 @@
+Avg. fps:234
+Objects: 100
+AABB vs. OOBB: 100 - 0
+Static: 0 %
+Octree depth: 2
+
+Avg. fps:135
+Objects: 100
+AABB vs. OOBB: 0 - 100
+Static: 0 %
+Octree depth: 2
+
+Avg. fps:543
+Objects: 100
+AABB vs. OOBB: 50 - 50
+Static: 0 %
+Octree depth: 2
+
