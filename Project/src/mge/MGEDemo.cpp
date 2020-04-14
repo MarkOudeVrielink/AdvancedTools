@@ -35,128 +35,15 @@ ofstream outfile("..\\_vs2015\\release_static_exe\\Data.txt", ios::out);
 
 MGEDemo::testSet _testData[] = {
 	//objects, %static, %AABB
-	//AABB vs. AABB 0% static
-	{ 10, 0, 100},
-	{ 25, 0, 100},
-	{ 100, 0, 100},
-	{ 250, 0, 100},
-	{ 1000, 0, 100},
-	{ 2500, 0, 100},
-	{ 10000, 0, 100},
-	//AABB vs. AABB 25% static
-	{ 10, 25, 100 },
-	{ 25, 25, 100 },
-	{ 100, 25, 100 },
-	{ 250, 25, 100 },
-	{ 1000, 25, 100 },
-	{ 2500, 25, 100 },
-	{ 10000, 25, 100 },
-	//AABB vs. AABB 50% static
-	{ 10, 50, 100 },
-	{ 25, 50, 100 },
-	{ 100, 50, 100 },
-	{ 250, 50, 100 },
-	{ 1000, 50, 100 },
-	{ 2500, 50, 100 },
-	{ 10000, 50, 100 },
-	//AABB vs. AABB 75% static
-	{ 10, 75, 100 },
-	{ 25, 75, 100 },
-	{ 100, 75, 100 },
-	{ 250, 75, 100 },
-	{ 1000, 75, 100 },
-	{ 2500, 75, 100 },
-	{ 10000, 75, 100 },
-	//AABB vs. AABB 100% static
-	{ 10, 100, 100 },
-	{ 25, 100, 100 },
-	{ 100, 100, 100 },
-	{ 250, 100, 100 },
-	{ 1000, 100, 100 },
-	{ 2500, 100, 100 },
-	{ 10000, 100, 100 },
-	//AABB vs.OOBB 0% static
-	{ 10, 0, 50 },
-	{ 25, 0, 50 },
-	{ 100, 0, 50 },
-	{ 250, 0, 50 },
-	{ 1000, 0, 50 },
-	{ 2500, 0, 50 },
-	{ 10000, 0, 50 },
-	//AABB vs.OOBB 25% static
-	{ 10, 25, 50 },
-	{ 25, 25, 50 },
-	{ 100, 25, 50 },
-	{ 250, 25, 50 },
-	{ 1000, 25, 50 },
-	{ 2500, 25, 50 },
-	{ 10000, 25, 50 },
-	//AABB vs.OOBB 50% static
-	{ 10, 50, 50 },
-	{ 25, 50, 50 },
-	{ 100, 50, 50 },
-	{ 250, 50, 50 },
-	{ 1000, 50, 50 },
-	{ 2500, 50, 50 },
-	{ 10000, 50, 50 },
-	//AABB vs.OOBB 75% static
-	{ 10, 75, 50 },
-	{ 25, 75, 50 },
-	{ 100, 75, 50 },
-	{ 250, 75, 50 },
-	{ 1000, 75, 50 },
-	{ 2500, 75, 50 },
-	{ 10000, 75, 50 },
-	//AABB vs.OOBB 100% static
-	{ 10, 100, 50 },
-	{ 25, 100, 50 },
-	{ 100, 100, 50 },
-	{ 250, 100, 50 },
-	{ 1000, 100, 50 },
-	{ 2500, 100, 50 },
-	{ 10000, 100, 50 },
-	//OOBB vs.OOBB 0% static
-	{ 10, 0, 0 },
-	{ 25, 0, 0 },
-	{ 100, 0, 0 },
-	{ 250, 0, 0 },
-	{ 1000, 0, 0 },
-	{ 2500, 0, 0 },
-	{ 10000, 0, 0 },
-	//OOBB vs.OOBB 25% static
-	{ 10, 25, 0 },
-	{ 25, 25, 0 },
-	{ 100, 25, 0 },
-	{ 250, 25, 0 },
-	{ 1000, 25, 0 },
-	{ 2500, 25, 0 },
-	{ 10000, 25, 0 },
-	//OOBB vs.OOBB 50% static
-	{ 10, 50, 0 },
-	{ 25, 50, 0 },
-	{ 100, 50, 0 },
-	{ 250, 50, 0 },
-	{ 1000, 50, 0 },
-	{ 2500, 50, 0 },
-	{ 10000, 50, 0 },
-	//OOBB vs.OOBB 75% static
-	{ 10, 75, 0 },
-	{ 25, 75, 0 },
-	{ 100, 75, 0 },
-	{ 250, 75, 0 },
-	{ 1000, 75, 0 },
-	{ 2500, 75, 0 },
-	{ 10000, 75, 0 },
-	//OOBB vs.OOBB 100% static
-	{ 10, 100, 0 },
-	{ 25, 100, 0 },
-	{ 100, 100, 0 },
-	{ 250, 100, 0 },
-	{ 1000, 100, 0 },
-	{ 2500, 100, 0 },
-	{ 10000, 100, 0 },
+	//AABB vs. AABB 0% static	
+	{ 50, 0, 100},
+	{ 50, 0, 0},
+	{ 50, 0, 50},
+	//{ 25, 0, 100},
+
+
 };
-int currenttestSet = 45;
+int currenttestSet = 0;
 int octreeDepth = 1;
 
 //construct the game class into _window, _renderer and hud (other parts are initialized by build)
@@ -210,7 +97,7 @@ void MGEDemo::_render() {
     AbstractGame::_render();
     _updateHud();
 
-	_ocTree->Render(_world);	
+	//_ocTree->Render(_world);	
 }
 
 int loops = 0;
@@ -222,7 +109,7 @@ int collisioncount = 0;
 
 void MGEDemo::_updateHud() {
 	_hud->setDebugInfo(debugInfo);
-    _hud->draw();
+    //_hud->draw();
 }
 
 void MGEDemo::_update(float pStep)
@@ -236,9 +123,11 @@ void MGEDemo::_update(float pStep)
 	}
 
 	debugInfo = "fps: " + std::to_string(_fps) + "\n collsions: " + std::to_string(_ocTree->Collisions(nullptr)->size());
-	/*
+	/**/
 	if (teststarted) {
-		if (currenttestSet < 104) {
+		
+		if (currenttestSet < (sizeof(_testData)/sizeof(_testData[0]))) {
+
 			if (runCount <= 10) {
 				if (loops >= 100) {
 					fpsCount += fpsSumm / loops;
@@ -269,8 +158,10 @@ void MGEDemo::_update(float pStep)
 				currenttestSet++;
 				fpsCount = 0;
 				loops = 0;
-				runCount = 0;				
-				StartTest(_testData[currenttestSet].objects, _testData[currenttestSet].percentageStatic, _testData[currenttestSet].percentageAABB);
+				runCount = 0;	
+				if (currenttestSet < (sizeof(_testData) / sizeof(_testData[0])) - 1) {
+					StartTest(_testData[currenttestSet].objects, _testData[currenttestSet].percentageStatic, _testData[currenttestSet].percentageAABB);
+				}
 			}			
 		}
 		else {
@@ -278,7 +169,7 @@ void MGEDemo::_update(float pStep)
 			cout << "Tests done" << endl;
 		}
 		
-	}*/
+	}/**/
 }
 
 MGEDemo::~MGEDemo()
@@ -296,10 +187,10 @@ void MGEDemo::StartTest(int objCount, int staticChance, int percentAABB)
 
 	///////////////////////////////////
 	int count = objCount;
-	float statChance = staticChance;
+	float statChance = (float)staticChance;
 	///////////////////////////////////
 
-	int numbreOfStaticItems = ((float)(count)) / 100 * statChance;
+	int numbreOfStaticItems = (int)(((float)(count)) / 100 * statChance);
 	int staticCount = 0;
 	bool isStatic = false;
 
@@ -354,9 +245,9 @@ void MGEDemo::StartTest(int objCount, int staticChance, int percentAABB)
 			_ocTree->Add(ocObj);
 
 			//rotate
-			ocObj->rotate(i * 5, glm::vec3(1, 0, 0));
-			ocObj->rotate(i * 2, glm::vec3(0, 1, 0));
-			ocObj->rotate(i * 3, glm::vec3(0, 0, 1));
+			ocObj->rotate((float)(i * 5), glm::vec3(1, 0, 0));
+			ocObj->rotate((float)(i * 2), glm::vec3(0, 1, 0));
+			ocObj->rotate((float)(i * 3), glm::vec3(0, 0, 1));
 		}
 
 		//random velocity

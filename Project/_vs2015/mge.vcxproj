@@ -163,11 +163,14 @@
       <IgnoreAllDefaultLibraries>
       </IgnoreAllDefaultLibraries>
       <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
-      <AdditionalLibraryDirectories>D:\School\2nd Year\Engine Algorithms\mge_v17_student_version\mge_v17_student_version\vs_extended\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\School\AdvancedTools\Project\vs_extended\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Collider.h" />
+    <ClInclude Include="..\src\Collision\Collider.h" />
+    <ClInclude Include="..\src\Collision\KDTree\KDTree.h" />
+    <ClInclude Include="..\src\Collision\OcTree\OCObject.h" />
+    <ClInclude Include="..\src\Collision\OcTree\OcTree.h" />
     <ClInclude Include="..\src\glm.hpp" />
     <ClInclude Include="..\src\mge\behaviours\AbstractBehaviour.hpp" />
     <ClInclude Include="..\src\mge\behaviours\KeysBehaviour.hpp" />
@@ -190,11 +193,12 @@
     <ClInclude Include="..\src\mge\materials\TextureMaterial.hpp" />
     <ClInclude Include="..\src\mge\MGEDemo.hpp" />
     <ClInclude Include="..\src\mge\util\DebugHud.hpp" />
-    <ClInclude Include="..\src\OCObject.h" />
-    <ClInclude Include="..\src\OcTree.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Collider.cpp" />
+    <ClCompile Include="..\src\Collision\Collider.cpp" />
+    <ClCompile Include="..\src\Collision\KDTree\KDTree.cpp" />
+    <ClCompile Include="..\src\Collision\OcTree\OCObject.cpp" />
+    <ClCompile Include="..\src\Collision\OcTree\OcTree.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\mge\behaviours\AbstractBehaviour.cpp" />
     <ClCompile Include="..\src\mge\behaviours\KeysBehaviour.cpp" />
@@ -216,8 +220,6 @@
     <ClCompile Include="..\src\mge\materials\TextureMaterial.cpp" />
     <ClCompile Include="..\src\mge\MGEDemo.cpp" />
     <ClCompile Include="..\src\mge\util\DebugHud.cpp" />
-    <ClCompile Include="..\src\OCObject.cpp" />
-    <ClCompile Include="..\src\OcTree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

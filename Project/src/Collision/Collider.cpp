@@ -2,7 +2,7 @@
 #include <iostream>
 #include "mge/core/AABB.h"
 #include "mge/core/OBB.h"
-#include "OCObject.h"
+#include "Collision/OcTree/OCObject.h"
 
 Collider::Collider(glm::vec3 pCenter)
 {
@@ -53,7 +53,7 @@ bool Collider::collides(AABB * one, OBB * other)
 	//Create a list of Axes from both of the Objects to project corner points upon
 	std::vector<glm::vec3> axes = one->GetAxis();
 	std::vector<glm::vec3> otherAxes = other->GetAxis();
-	for (int i = 0; i < otherAxes.size(); i++)
+	for (unsigned int i = 0; i < otherAxes.size(); i++)
 	{
 		axes.push_back(otherAxes[i]);
 	}
@@ -63,12 +63,12 @@ bool Collider::collides(AABB * one, OBB * other)
 	std::vector<glm::vec3> corners = one->GetCorners();
 	std::vector<glm::vec3> otherCorners = other->GetCorners();
 
-	for (int j = 0; j < axes.size(); j++)
+	for (unsigned int j = 0; j < axes.size(); j++)
 	{
 		//Get a list of projections of the Corners upon the Axes from both objects
 		std::vector<float> projections1;
 		std::vector<float> projections2;
-		for (int i = 0; i < corners.size(); i++)
+		for (unsigned int i = 0; i < corners.size(); i++)
 		{
 			projections1.push_back(glm::dot(corners[i], axes[j]));
 			projections2.push_back(glm::dot(otherCorners[i], axes[j]));
@@ -81,7 +81,7 @@ bool Collider::collides(AABB * one, OBB * other)
 		//Get the Min and Max projections of both Objects
 		float minProjection1 = INFINITY;
 		float maxProjection1 = -INFINITY;
-		for (int i = 0; i< projections1.size(); i++)
+		for (unsigned int i = 0; i< projections1.size(); i++)
 		{
 			if (projections1[i] < minProjection1)
 			{
@@ -94,7 +94,7 @@ bool Collider::collides(AABB * one, OBB * other)
 		}
 		float minProjection2 = INFINITY;
 		float maxProjection2 = -INFINITY;
-		for (int i = 0; i< projections2.size(); i++)
+		for (unsigned int i = 0; i< projections2.size(); i++)
 		{
 			if (projections2[i] < minProjection2)
 			{
@@ -107,7 +107,7 @@ bool Collider::collides(AABB * one, OBB * other)
 		}
 		//Check for intersection
 		bool intersection = false;
-		for (int i = 0; i < projections2.size(); i++)
+		for (unsigned int i = 0; i < projections2.size(); i++)
 		{
 			if (projections2[i] >= minProjection1)
 			{
@@ -119,7 +119,7 @@ bool Collider::collides(AABB * one, OBB * other)
 		}
 		//Check intersections for both objects, in case one object encases the other from both sides
 		//Where the min and max points are both less and more than that of the other object
-		for (int i = 0; i < corners.size(); i++)
+		for (unsigned int i = 0; i < corners.size(); i++)
 		{
 			if (projections1[i] >= minProjection2)
 			{
@@ -165,7 +165,7 @@ bool Collider::collides(OBB * one, OBB * other)
 	//Get Axes
 	std::vector<glm::vec3> axes = one->GetAxis();
 	std::vector<glm::vec3> otherAxes = other->GetAxis();
-	for (int i = 0; i < otherAxes.size(); i++)
+	for (unsigned int i = 0; i < otherAxes.size(); i++)
 	{
 		axes.push_back(otherAxes[i]);
 	}
@@ -174,12 +174,12 @@ bool Collider::collides(OBB * one, OBB * other)
 	std::vector<glm::vec3> corners = one->GetCorners();
 	std::vector<glm::vec3> otherCorners = other->GetCorners();
 
-	for (int j = 0; j < axes.size(); j++)
+	for (unsigned int j = 0; j < axes.size(); j++)
 	{
 		//Get projections
 		std::vector<float> projections1;
 		std::vector<float> projections2;
-		for (int i = 0; i < corners.size(); i++)
+		for (unsigned int i = 0; i < corners.size(); i++)
 		{
 			projections1.push_back(glm::dot(corners[i], axes[j]));
 			projections2.push_back(glm::dot(otherCorners[i], axes[j]));
@@ -191,7 +191,7 @@ bool Collider::collides(OBB * one, OBB * other)
 		//Get min and max projection
 		float minProjection1 = INFINITY;
 		float maxProjection1 = -INFINITY;
-		for (int i = 0; i< projections1.size(); i++)
+		for (unsigned int i = 0; i< projections1.size(); i++)
 		{
 			if (projections1[i] < minProjection1)
 			{
@@ -204,7 +204,7 @@ bool Collider::collides(OBB * one, OBB * other)
 		}
 		float minProjection2 = INFINITY;
 		float maxProjection2 = -INFINITY;
-		for (int i = 0; i< projections2.size(); i++)
+		for (unsigned int i = 0; i< projections2.size(); i++)
 		{
 			if (projections2[i] < minProjection2)
 			{
@@ -218,7 +218,7 @@ bool Collider::collides(OBB * one, OBB * other)
 
 		//Check for intersection
 		bool intersection = false;
-		for (int i = 0; i < projections2.size(); i++)
+		for (unsigned int i = 0; i < projections2.size(); i++)
 		{
 			if (projections2[i] >= minProjection1)
 			{
@@ -228,7 +228,7 @@ bool Collider::collides(OBB * one, OBB * other)
 				}
 			}
 		}
-		for (int i = 0; i < corners.size(); i++)
+		for (unsigned int i = 0; i < corners.size(); i++)
 		{
 			if (projections1[i] >= minProjection2)
 			{

@@ -2,8 +2,8 @@
 #define MGEDEMO_H
 
 #include <mge/core/AbstractGame.hpp>
-#include "OcTree.h"
-#include "OCObject.h"
+#include "Collision/OcTree/OcTree.h"
+#include "Collision/OcTree/OCObject.h"
 
 class DebugHud;
 

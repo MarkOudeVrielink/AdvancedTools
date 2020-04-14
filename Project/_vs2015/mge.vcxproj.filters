@@ -20,8 +20,14 @@
     <Filter Include="MGE Source files\mge\util">
       <UniqueIdentifier>{7d824c34-4bb6-43a4-a48a-0d68b7aad6e5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="MGE Source files\OctTree">
+    <Filter Include="MGE Source files\Collision">
+      <UniqueIdentifier>{c2779036-ae5e-43d1-abb4-6036d2b5175a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MGE Source files\Collision\OctTree">
       <UniqueIdentifier>{a6f41781-6cf7-41c9-b0e4-a1e2b1450ef5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MGE Source files\Collision\KDTree">
+      <UniqueIdentifier>{d2351cbd-6713-4c51-a078-f9213ca10518}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -82,23 +88,26 @@
     <ClInclude Include="..\src\mge\config.hpp">
       <Filter>MGE Source files\mge</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\mge\behaviours\OrbitBehaviour.h">
-      <Filter>MGE Source files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\OCObject.h">
-      <Filter>MGE Source files\OctTree</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\Collider.h">
-      <Filter>MGE Source files\OctTree</Filter>
-    </ClInclude>
     <ClInclude Include="..\src\mge\core\AABB.h">
       <Filter>MGE Source files\mge\core</Filter>
     </ClInclude>
     <ClInclude Include="..\src\mge\core\OBB.h">
       <Filter>MGE Source files\mge\core</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\OcTree.h">
-      <Filter>MGE Source files\OctTree</Filter>
+    <ClInclude Include="..\src\mge\behaviours\OrbitBehaviour.h">
+      <Filter>MGE Source files\mge\behaviours</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Collision\Collider.h">
+      <Filter>MGE Source files\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Collision\OcTree\OcTree.h">
+      <Filter>MGE Source files\Collision\OctTree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Collision\OcTree\OCObject.h">
+      <Filter>MGE Source files\Collision\OctTree</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Collision\KDTree\KDTree.h">
+      <Filter>MGE Source files\Collision\KDTree</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -156,23 +165,26 @@
     <ClCompile Include="..\src\mge\MGEDemo.cpp">
       <Filter>MGE Source files\mge</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\mge\behaviours\OrbitBehaviour.cpp">
-      <Filter>MGE Source files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\OCObject.cpp">
-      <Filter>MGE Source files\OctTree</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\Collider.cpp">
-      <Filter>MGE Source files\OctTree</Filter>
-    </ClCompile>
     <ClCompile Include="..\src\mge\core\AABB.cpp">
       <Filter>MGE Source files\mge\core</Filter>
     </ClCompile>
     <ClCompile Include="..\src\mge\core\OBB.cpp">
       <Filter>MGE Source files\mge\core</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\OcTree.cpp">
-      <Filter>MGE Source files\OctTree</Filter>
+    <ClCompile Include="..\src\mge\behaviours\OrbitBehaviour.cpp">
+      <Filter>MGE Source files\mge\behaviours</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Collision\OcTree\OcTree.cpp">
+      <Filter>MGE Source files\Collision\OctTree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Collision\Collider.cpp">
+      <Filter>MGE Source files\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Collision\OcTree\OCObject.cpp">
+      <Filter>MGE Source files\Collision\OctTree</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Collision\KDTree\KDTree.cpp">
+      <Filter>MGE Source files\Collision\KDTree</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

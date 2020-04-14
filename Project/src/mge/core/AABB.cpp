@@ -1,5 +1,5 @@
 #include "AABB.h"
-#include "OCObject.h"
+#include "Collision/OcTree/OCObject.h"
 #include "mge/materials/ColorMaterial.hpp"
 
 

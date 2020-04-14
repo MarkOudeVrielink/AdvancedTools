@@ -59,6 +59,7 @@ class AbstractGame
 		Renderer* _renderer;        //the renderer class to render the world
 		World* _world;              //the root game object that represents our scene
 		float _fps;                 //stores the real fps
+		float _fpsCap = 10000.f;
 
     private:
         AbstractGame(const AbstractGame&);
